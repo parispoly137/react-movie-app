@@ -1,3 +1,3 @@
-#React-movie-app
+# React-movie-app
 
 React JS Fundamentals Course
