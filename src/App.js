@@ -1,48 +1,24 @@
 import React from 'react';
-import PropTypes from "prop-types";
 
 class App extends React.Component {
   state = {
-    count: 0
-  };
-
-  add = () => {
-    this.setState(current => ({ count: current.count + 1 }));
-  }
-
-  minus = () => {
-    this.setState(current => ({ count: current.count - 1 }));
-  }
-
-  constructor(props) {
-    super(props);
-    console.log("I just got born.");
+    isLoading: true,
+    movie: []
   }
 
   componentDidMount() {
-    console.log("Rendered for the first time.")
-  }
-
-  componentDidUpdate() {
-    console.log("The component has been updated.")
-  }
-
-  componentWillUnmount() {
-    console.log("The component is dead.") //But you won't be able to see it.
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 3000);
   }
 
   render() {
-    console.log("Rendering complete.");
-    return (
-      <div>
-        <h1>The number is: {this.state.count} </h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>Minus</button>
-      </div>
+    const { isLoading } = this.state;
 
+    return (
+      <h1>{isLoading ? "Loading..." : "We are ready!!"}</h1>
     )
   }
-
 }
 
 export default App;
