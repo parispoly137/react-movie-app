@@ -52,3 +52,13 @@
   margin-right: 10px;
   font-size: 14px;
 }
+
+.movies {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px;
+  padding-top: 70px;
+  width: 80%;
+}
